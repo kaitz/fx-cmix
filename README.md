@@ -15,8 +15,8 @@ Below is the fx-cmix result:
 | fx-cmix compressor's executable file size (S1)| 436707 bytes |
 | fx-cmix self-extracting archive size (S2)| 112148343 bytes |
 | Total size (S) | 112585050 bytes |
-| Previous record (L) | 114130141 bytes |
-| fx-cmix improvement (1 - S/L) | 1.35% |
+| Previous record (L) | 114156155 bytes |
+| fx-cmix improvement (1 - S/L) | 1.38% |
 
 | Experiment platform |  |
 | --- | ----------- |
