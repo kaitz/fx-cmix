@@ -15,7 +15,7 @@ make CFLAGS_DEFINES="$CFLAGS_DEFINES" prof_gen -j
 
 ./cmix -c ./prof_input/input ./prof_comp > ./prof_output
 rm ./prof_comp ./prof_output 
-llvm-profdata-13 merge -output=default.profdata ./pgo_data/*
+llvm-profdata-12 merge -output=default.profdata ./pgo_data/*
 mv default.profdata pgo_data/
 
 make CFLAGS_DEFINES="$CFLAGS_DEFINES" prof_use -j
