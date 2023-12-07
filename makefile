@@ -1,4 +1,4 @@
-CC = clang++-12
+CC = clang++-17
 
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
