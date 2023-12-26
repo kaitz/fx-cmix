@@ -3,7 +3,15 @@ The fx-cmix is a updated implementation of [fast-cmix](https://github.com/saurab
 
 # Submission Description
 This submission contains fallowing modifications on top of the recent fast-cmix Hutter Prize winner:
-* paq8hp model is replaced with fxcmv1 model
+* paq8hp model is replaced with fxcmv1 model with fallowing notable additions:
+  * Multiple state tables are used in predictors, this allows better predictability.
+  * Most contexts are divided between 30 main predictors, this allows more efficient memory usage per context.
+  * Added bracket, quote, first char, char in paragraph, column, table, template, word stream/paragraph context. These contexts are parsed depending on input, this includes parsing of wiki links, http links, tables, columns, paragraphs, quotes, brackets, list, templates.
+  * Some contexts are swapped in predictors depending on what current input is (table, column mode, word/paragraph, list).
+  * Some predictors are switched on/off depending on last char, link or current bracket which improves compression.
+  * Predictions are mixed with context that are more aware of what predictors are outputting.
+  * Match model (not present in paq8hp model).
+  * Predictors are faster allowing more complex contexts.
 * new dictionary
 * small change in phda9 preprocessor and in two tables in cmix
 * memory usage is larger in fxcmv1 model compared to old paq8hp
@@ -48,11 +56,11 @@ bool mmap_to_disk = true;
 This variable is set to true by default, to comply with the Hutter Prize RAM limit.
 
 # Installing packages required for compiling fx-cmix compressor from sources on Ubuntu
-Building fx-cmix compressor from sources requires clang-12 (or clang-13 witch was used to create binary), upx-ucl, and make packages.
+Building fx-cmix compressor from sources requires clang-17, upx-ucl, and make packages.
 On Ubuntu, these packages can be installed by running the following scripts:
 ```bash
 ./install_tools/install_upx.sh
-./install_tools/install_clang-12.sh
+./install_tools/install_clang-17.sh
 ```
 
 # Compiling fx-cmix compressor from sources
