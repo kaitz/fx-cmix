@@ -1,6 +1,8 @@
 # fx-cmix
 The fx-cmix is a updated implementation of [fast-cmix](https://github.com/saurabhk/fast-cmix/). 
 
+Prize awarded on February 2, 2024. http://prize.hutter1.net/
+
 # Submission Description
 This submission contains fallowing modifications on top of the recent fast-cmix Hutter Prize winner:
 * paq8hp model is replaced with fxcmv1 model with fallowing notable additions:
